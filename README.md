@@ -1,1 +1,2 @@
-# zeply_crypto
+# Zeply Crypto REST API
+

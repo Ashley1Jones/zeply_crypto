@@ -1,0 +1,73 @@
+Requirements:
+- REST API
+    - POST: Generate Address !
+    - GET: List Address !
+    - GET: Retrieve Address !
+- Support for BTC and ETH !
+- Bonus points for another crypto coin
+- Associate each address in the database with integer id !
+- Generate multiple addresses using a single private key ?
+- Store sensitive data securely
+- Wallet database recovery
+- Should include tests !
+- Documentation for manual testing
+- Git repo
+
+- Account for future improvements
+    - Allowing signing transactions
+    - Back up private keys
+    - Adding support for a new coin
+
+
+
+Tutorial followed to first create app:
+https://medium.com/swlh/build-your-first-rest-api-with-django-rest-framework-e394e39a482c
+
+Testing the REST api
+https://www.django-rest-framework.org/api-guide/testing/#csrf-validation
+
+Generating bitcoin addresses here
+https://burakcanekici.medium.com/bitcoin-address-generation-on-python-e267df5ff3a3
+
+Emable ripemd160
+https://stackoverflow.com/questions/72409563/unsupported-hash-type-ripemd160-with-hashlib-in-python
+
+# ethereum hashing
+https://www.arthurkoziel.com/generating-ethereum-addresses-in-python/
+
+# Verify bitcoin address
+https://thomas.vanhoutte.be/tools/validate-bitcoin-address.php?address=1VQ5HLRF6XvDe6QbF5rvJR94GHxNey8YT&submit=
+
+# encrypt database
+https://dev.to/kadiemq/python-django-create-a-more-secure-database-by-using-a-custom-field-1b9l
+
+# setting up postresql
+https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-20-04
+commads:
+- CREATE DATABASE crytpo_wallets
+- CREATE USER zeply WITH PASSWORD 'password';
+
+
+# grant permission to create table
+https://dba.stackexchange.com/questions/33285/granting-a-user-account-permission-to-create-databases-in-postgresql
+
+
+If you have already deleted the migrations folder, you can recreate it by running python manage.py makemigrations <app_name>. This will create the initial migration files for the specified app.
+Changing test case to transaction test case made it work.
+
+
+# Generate SSL certificates
+https://stackoverflow.com/questions/10175812/how-to-generate-a-self-signed-ssl-certificate-using-openssl
+
+# encrypting strings
+https://stackoverflow.com/questions/62942876/django-model-field-for-a-secure-string
+
+
+# create postgresql db
+https://1kevinson.com/how-to-create-a-postgres-database-in-docker/
+
+
+# commands
+curl -X POST http://localhost:8000/Crypto_Address_Table/generate_address/ -H "Content-Type: application/json" -d '{"currency": "BTC"}'
+curl -X GET http://localhost:8000/Crypto_Address_Table/
+curl -X GET http://localhost:8000/Crypto_Address_Table/1/

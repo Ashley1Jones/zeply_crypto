@@ -1,0 +1,36 @@
+services:
+#  postgres:
+#    image: postgres:15.1
+#    container_name: ${PG_CONTAINER_NAME}
+#    environment:
+#      POSTGRES_DB: ${POSTGRES_DB}
+#      POSTGRES_USER: ${POSTGRES_USER}
+#      POSTGRES_PASSWORD: ${PASSWORD}
+#      PGDATA: ${PGDATA}
+#    volumes:
+#       - crypto_volume:/data/crypto_data
+#    ports:
+#      - "${PG_PORT}:5432"
+#    restart: unless-stopped
+
+  web:
+    container_name: "crypto_django"
+    build:
+      context: btc_address_api
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      PASSWORD: ${PASSWORD}
+      PGDATA: ${PGDATA}
+      PG_PORT: ${PG_PORT}
+    env_file:
+      - .env
+    ports:
+      - 8000:8000
+#      - 5433:5433
+
+volumes:
+    crypto_volume:
+      external: true
