@@ -1,6 +1,6 @@
 # Zeply Crypto REST API
 
-This Github repo is for a REST API that generates and stores cryptocurrency addresses for Bitcoin (BTC) and Ethereum (ETH).
+This Github repo is for a Django based REST API that generates and stores cryptocurrency addresses for Bitcoin (BTC) and Ethereum (ETH).
 The project requirements include implementing various endpoints using the Django REST Framework, associating each address with an integer ID, and securely storing private keys. 
 There is also a section for improvements that could be made to the project, such as adding SSL for a more secure connection and implementing authentication for the API.
 
