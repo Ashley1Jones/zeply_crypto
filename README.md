@@ -43,7 +43,11 @@ Get the 1st row of the table. Replace 1 with whatever index you would like to fe
 ```commandline
 curl -X GET http://localhost:8000/Crypto_Address_Table/1/
 ```
-
+You can also put: 
+```html
+http://localhost:8000/
+```
+... in the browser to view the application from your browser. 
 ## Tests
 In /address_api/tset.py contains tests for each of the requests. 
 You can run them with:
