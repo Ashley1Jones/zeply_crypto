@@ -18,7 +18,17 @@ class CryptoWalletDetails:
 
 def generate_keys(crypto_code: str,
                   ) -> CryptoWalletDetails:
+    """
+    Args:
+        crypto_code: the three-letter code denoting which currency you would like to generate wallet from
+
+    Returns:
+        Crypto wallet with all wallet details
+    """
+
     print(f'Generating keys for currency: {crypto_code}')
+    if len(crypto_code) != 3:
+        raise ValueError(f'"{crypto_code}" should have three letters')
 
     match crypto_code:
         case 'BTC':
@@ -38,9 +48,12 @@ def generate_keys(crypto_code: str,
 
 
 def generate_bitcoin() -> CryptoWalletDetails:
-    # example taken from:
-    # https://burakcanekici.medium.com/bitcoin-address-generation-on-python-e267df5ff3a3
-
+    """
+    example taken from:
+    https://burakcanekici.medium.com/bitcoin-address-generation-on-python-e267df5ff3a3
+    Returns:
+        Crypto wallet with bitcoin details
+    """
     ecdsa_private_key = ecdsa.SigningKey.generate(curve=ecdsa.SECP256k1)
     ecdsa_public_key = '04' + ecdsa_private_key.get_verifying_key().to_string().hex()
     public_key_hash = hashlib.sha256(binascii.unhexlify(ecdsa_public_key)).hexdigest()
@@ -58,8 +71,12 @@ def generate_bitcoin() -> CryptoWalletDetails:
 
 
 def generate_eth() -> CryptoWalletDetails:
-    # code used for the following
-    # https://stackoverflow.com/questions/51945714/how-do-i-generate-an-ethereum-public-key-from-a-known-private-key-using-python
+    """
+    Code taken from:
+    https://stackoverflow.com/questions/51945714/how-do-i-generate-an-ethereum-public-key-from-a-known-private-key-using-python
+    Returns:
+        Crypto wallet for ethereum details
+    """
 
     private_key = '0x' + secrets.token_hex(32)
     private_key_bytes = eth_utils.decode_hex(private_key)
