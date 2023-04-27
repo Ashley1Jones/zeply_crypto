@@ -27,8 +27,6 @@ def generate_keys(crypto_code: str,
     """
 
     print(f'Generating keys for currency: {crypto_code}')
-    if len(crypto_code) != 3:
-        raise ValueError(f'"{crypto_code}" should have three letters')
 
     match crypto_code:
         case 'BTC':
