@@ -71,3 +71,6 @@ https://1kevinson.com/how-to-create-a-postgres-database-in-docker/
 curl -X POST http://localhost:8000/Crypto_Address_Table/generate_address/ -H "Content-Type: application/json" -d '{"currency": "BTC"}'
 curl -X GET http://localhost:8000/Crypto_Address_Table/
 curl -X GET http://localhost:8000/Crypto_Address_Table/1/
+
+# https://timonweb.com/django/https-django-development-server-ssl-certificate/
+SSL certification on Django
