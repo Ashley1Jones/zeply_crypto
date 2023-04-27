@@ -15,7 +15,7 @@ There is also a section for improvements that could be made to the project, such
 - Store sensitive data securely (Private keys are encrypted)
 - Wallet database recovery (TODO)
 - Should include tests (Includes automated tests)
-- Documentation for manual testing
+- Documentation for manual testing (Met)
 - Git repo (Met)
 
 ## Prerequisites
