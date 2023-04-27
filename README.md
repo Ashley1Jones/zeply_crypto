@@ -57,3 +57,4 @@ However, you would need to stop the process in the docker container to use this.
 - Include Postgresql with SSL for more secure connection
 - Include authentication on the REST api 
 - Database regular backup
+- Validate encryption algorithms and libraries are safe
